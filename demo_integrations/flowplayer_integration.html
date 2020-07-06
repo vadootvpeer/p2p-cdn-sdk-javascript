@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flow Player with Peer Vadoo</title>
+    <meta charset="utf-8">
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>	
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">	
+    <script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>
+</head>
+<body>
+    <div id="video" class="fp-slim"></div>
+    <script>
+        var mixer = new vadoo.base.Mixer(token="TOKEN");
+
+		var player = flowplayer("#video", {
+			clip: {
+				sources: [{
+					src: "https://example.com/path/to/your/playlist.m3u8",
+					type: "application/x-mpegurl"
+				}]
+			},
+			hlsjs: {
+				liveSyncDurationCount: 5,
+				loader: mixer.createMixer(),
+			}
+		});
+		vadoo.base.start_flow_player(player);
+    </script>
+</body>
+</html>

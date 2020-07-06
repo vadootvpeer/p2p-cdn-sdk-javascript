@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MediaElement.js with Peer Vadoo</title>
+    <meta charset="utf-8">
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.9/mediaelementplayer.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.9/mediaelement-and-player.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <video id="video"></video>
+    </div>
+    <script>
+        var mixer = new vadoo.base.Mixer(token="TOKEN");
+
+		// allow only one supported renderer
+		mejs.Renderers.order = [ "native_hls" ];
+
+		var player = new MediaElementPlayer("video", {
+			hls: {
+				liveSyncDurationCount: 5,
+				loader: mixer.createMixer()
+			},
+			success: function (mediaElement) {
+				vadoo.base.start_mediaelementjs_player(mediaElement);
+			}
+		});
+
+		player.setSrc("https://example.com/path/to/your/playlist.m3u8");
+		player.load();
+    </script>
+</body>
+</html>

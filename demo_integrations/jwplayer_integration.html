@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JW Player with Peer Vadoo</title>
+    <meta charset="utf-8">
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>			
+    <script src="https://cdn.jsdelivr.net/npm/@hola.org/jwplayer-hlsjs@latest/dist/jwplayer.hlsjs.min.js"></script>
+    <script src="https://content.jwplatform.com/libraries/aG3IMhIy.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+	
+</head>
+<body>
+    <div id="player"></div>
+    <script>
+        var mixer = new vadoo.base.Mixer(token="TOKEN");
+		var player = jwplayer("player");
+		player.setup({
+			file: "https://example.com/path/to/your/playlist.m3u8"
+		});
+
+		jwplayer_hls_provider.attach();
+
+		vadoo.base.start_jwplayer(player, {
+			liveSyncDurationCount: 5,
+			loader: mixer.createMixer()
+		});
+    </script>
+</body>
+</html>

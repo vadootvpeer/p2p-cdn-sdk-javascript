@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clappr/Hls.js with Peer Vadoo</title>
+    <meta charset="utf-8">
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>	
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest"></script>
+</head>
+<body>
+    <div id="player"></div>
+    <script>
+		var mixer = new vadoo.base.Mixer(token="TOKEN");
+
+		var player = new Clappr.Player({
+			parentId: "#player",
+			source: "https://example.com/path/to/your/playlist.m3u8",
+			mute: true,
+			autoPlay: true,
+			playback: {
+				hlsjsConfig: {
+					liveSyncDurationCount: 5,
+					loader: mixer.createMixer()
+				}
+			}
+		});
+		vadoo.base.start_clappr_player(player);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hls.js with Peer Vadoo</title>
+    <meta charset="utf-8">
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>	
+    <script src="https://www.peervadoo.com/script/hlsjs-min.js"></script>	
+</head>
+<body>
+    <video id="video" controls></video>
+    <script>
+        var mixer = new vadoo.base.Mixer(token="TOKEN");
+
+		var hls = new Hls({
+			liveSyncDurationCount: 5,
+			loader: mixer.createMixer()
+		});
+
+		vadoo.base.start_hlsjs_player(hls);
+
+		hls.loadSource("https://example.com/path/to/your/playlist.m3u8");
+
+		var video = document.getElementById("video");
+		hls.attachMedia(video);
+    </script>
+</body>
+</html>
