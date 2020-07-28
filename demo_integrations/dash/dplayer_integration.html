@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>DPlayer with Peer Vadoo</title>
+
+	<script src="https://jssdk.peervadoo.com/vadoosdk_dash.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest/dist/DPlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
+
+    <style>
+        #dplayer {
+            width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="dplayer"></div>
+
+    <script>
+        shaka.polyfill.installAll();
+
+		window.dp = new DPlayer({
+			container: document.getElementById("dplayer"),
+			video: {
+				url: "https://example.com/path/to/your/manifest.mpd",
+				type: "customHlsOrDash",
+				customType: {
+					"customHlsOrDash": function (video, player) {
+						const engine = new vadoo.shaka.Mixer(token="TOKEN");
+
+						const src = video.src;
+						const shakaPlayer = new shaka.Player(video);
+
+						const onError = function(error) { console.error("Error code", error.code, "object", error); }
+						shakaPlayer.addEventListener("error", function(event) { onError(event.detail); });
+
+						engine.start_shaka_player(shakaPlayer);
+
+						shakaPlayer.load(src).catch(onError);
+					}
+				}
+			}
+		});
+    </script>
+
+</body>
+</html>

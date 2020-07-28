@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Plyr with Peer Vadoo</title>
+	<script src="https://jssdk.peervadoo.com/vadoosdk_dash.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css">
+    <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+
+    <style>
+        #wrapper {
+            width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <video id="video" controls></video>
+    </div>
+
+    <script>
+		var engine = new vadoo.shaka.Mixer(token="TOKEN");
+
+		var video = document.getElementById("video");
+		var player = new Plyr(video);
+
+		shaka.polyfill.installAll();
+		var shakaPlayer = new shaka.Player(video);
+		engine.start_shaka_player(shakaPlayer);
+		shakaPlayer.load("https://example.com/path/to/your/manifest.mpd");
+    </script>
+
+</body>
+</html>

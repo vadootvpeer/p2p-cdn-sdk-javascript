@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Clappr with Peer Vadoo</title>
+	<script src="https://jssdk.peervadoo.com/vadoosdk_dash.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest"></script>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.js"></script>
+
+    <style>
+        #video {
+            width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="video"></div>
+
+    <script>
+		var engine = new vadoo.shaka.Mixer(token="TOKEN");
+		
+		var player = new Clappr.Player({
+			parentId: "#video",
+			source: "https://example.com/path/to/your/manifest.mpd",
+			plugins: [DashShakaPlayback],
+			shakaOnBeforeLoad: function(shakaPlayerInstance) {
+				engine.start_shaka_player(shakaPlayerInstance);
+			}
+		});
+		player.play();
+    </script>
+
+</body>
+</html>

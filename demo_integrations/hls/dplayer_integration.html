@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>DPlayer with Peer Vadoo</title>
+
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/p2p-dplayer@latest/dist/DPlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dplayer@latest"></script>
+
+    <style>
+        #dplayer {
+            width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="dplayer"></div>
+
+    <script>
+		window.dp = new DPlayer({
+			container: document.getElementById("dplayer"),
+			video: {
+				url: "https://example.com/path/to/your/playlist.m3u8",
+				type: "customHls",
+				customType: {
+					"customHls": function (video, player) {
+						const engine = new vadoo.base.Mixer(token="TOKEN");
+
+						const hls = new Hls({
+							liveSyncDurationCount: 5, 
+							loader: engine.createLoaderClass()
+						});
+
+						p2pml.hlsjs.stat_hlsjs_player(hls);
+
+						hls.loadSource(video.src);
+						hls.attachMedia(video);
+					}
+				}
+			}
+		});
+    </script>
+
+</body>
+</html>

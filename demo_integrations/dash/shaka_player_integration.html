@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Shaka Player with Peer Vadoo</title>
+
+	<script src="https://jssdk.peervadoo.com/vadoosdk_dash.js"></script>
+
+</head>
+<body>
+
+    <video id="video" width="640" poster="https://shaka-player-demo.appspot.com/assets/poster.jpg" controls autoplay muted></video>
+
+    <script>
+
+        shaka.polyfill.installAll();
+
+		var engine = new vadoo.shaka.Mixer(token="TOKEN");
+
+		var video = document.getElementById("video");
+		var player = new shaka.Player(video);
+		var onError = function(error) { console.error("Error code", error.code, "object", error); }
+		player.addEventListener("error", function(event) { onError(event.detail); });
+
+		engine.start_shaka_player(player);
+
+		player.load(
+			"https://example.com/path/to/your/manifest.mpd"
+		).catch(onError);
+    </script>
+
+</body>
+</html>
