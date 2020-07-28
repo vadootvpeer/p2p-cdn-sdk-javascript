@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://media-exp1.licdn.com/dms/image/C510BAQEut625xhgL8w/company-logo_200_200/0?e=1595462400&v=beta&t=34DYAra_uBHEmaJjV_iOaaZnroFxQ2csZgXwJsco7rg"  width="150" height="150">  
+<img src="https://media-exp1.licdn.com/dms/image/C4D0BAQEHpLFCTyRj4Q/company-logo_200_200/0?e=1602720000&v=beta&t=d9VYRBltUezLrP0jFvs43j5GQqzEqI3PttcYBdAmFIw"  width="150" height="150">  
 </p> 
 
 <h4 align="center">Javascript p2p cdn sdk to distribute load and reduce costs(https://peervadoo.com)</h4>
