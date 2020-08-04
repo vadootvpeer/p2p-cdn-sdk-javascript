@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Video.js with Peer Vadoo</title>
+	<meta charset="utf-8">
+	<link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.13.0/video.min.js"></script>	
+	<script src="https://jssdk.peervadoo.com/videojs_dash.js"></script>
+	<script src="lib/videojs-shaka.js"></script>
+</head>
+<body>
+	<video id="video" class="video-js vjs-default-skin" preload="none" autoplay controls></video>
+	<script>
+		var mixer = new vadoo.shaka.Mixer(token="TOKEN");
+		var player;
+		if (vadoo.shaka.Mixer.isSupported()) {
+			player = videojs('#video', {
+				techOrder: ['shaka', 'html5'],
+				shaka: {
+					engine: mixer
+				}
+			});
+		} else {
+			player = videojs('#video', {
+				techOrder: ['shaka', 'html5'],
+			});
+		}
+		player.src([{
+			type: 'application/dash+xml',
+			src: 'https://example.com/path/to/your/manifest.mpd'
+		}]);		
+	</script>
+</body>
+</html>
