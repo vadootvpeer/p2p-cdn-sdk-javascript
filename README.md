@@ -10,6 +10,10 @@ Vadoo is powered by webrtc which distributes the load on users to reduce the ser
 
 **First 10 GB data free every month using P2P(Peer 2 Peer) network** 
 
+## Demo 
+
+A live web demo is available at https://api.peervadoo.com/test . Click on **Add new peer** to see the tech in action. You can change the existing url with your own m3u8 url.
+
 ## Features
 - Support live and VOD streams over HLS protocol(m3u8)
 - Support encrypted HLS stream
