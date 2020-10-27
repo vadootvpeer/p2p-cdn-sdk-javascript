@@ -66,4 +66,4 @@ Raise an issue for any additional feature request which will be actively worked 
 [Ankur](https://github.com/ncodepro)
 
 ## Contact Us
-Email：vadootv@gmail.com
+Email：am@vadoo.tv
