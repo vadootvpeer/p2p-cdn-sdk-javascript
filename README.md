@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://media-exp1.licdn.com/dms/image/C4D0BAQEHpLFCTyRj4Q/company-logo_200_200/0?e=1602720000&v=beta&t=d9VYRBltUezLrP0jFvs43j5GQqzEqI3PttcYBdAmFIw"  width="150" height="150">  
+<img src="https://raw.githubusercontent.com/vadootvpeer/sdk-android/master/logo.jpg"  width="150" height="150">  
 </p> 
 
 <h4 align="center">Javascript p2p cdn sdk to distribute load and reduce costs(https://peervadoo.com)</h4>
@@ -24,6 +24,15 @@ To integrate with our sdk, follow the sample integration from here for your requ
 
 If your required player is not available above, raise an issue
 
+## Browser Support
+WebRTC has already been incorporated into the HTML5 standard and it is broadly deployed in modern browsers. The compatibility of Vadoo depends on the browser support of WebRTC and Hls.js. Please note that iOS Safari "Mobile" does not support the MediaSource API.
+
+ Compatibility|Chrome | Firefox | macOS Safari| Android Wechat/QQ | Opera | Edge | IE | iOS Safari | 
+:-: | :-: | :-: | :-: | :-: | :-: | :-:| :-:| :-:
+WebRTC Datachannel | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
+Hls.js | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ |
+Vadoo | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ❌ | ❌ |
+
 ## Sample apps
 
 To test out our sdk you can visit the link [Demo](https://api.peervadoo.com/test). 
@@ -41,6 +50,10 @@ A token will be sent to your email id. Click on verification link in email to ve
 Complete Dashboard with monthly savings, billing, configurations and additional info is available at https://api.peervadoo.com/login 
 
 Login using the credentials of signup
+
+# Android sdk 
+
+https://github.com/vadootvpeer/sdk-android
 
 ## Support
 
