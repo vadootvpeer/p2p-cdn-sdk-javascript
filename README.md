@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/vadootvpeer/sdk-android/master/logo.jpg"  width="150" height="150">  
 </p> 
 
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fvadootvpeer%2Fsdk-javascript&via=Vadoobot&text=Web%20Sdk%20to%20reduce%20video%20streaming%20costs%20by%2090%25&hashtags=cdn%2Cp2p%2Cvideo%2Cott%2Clive%2Cstreaming) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/vadootvpeer/sdk-javascript/blob/master/LICENSE)
+[![](https://img.shields.io/npm/v/vadoosdk.svg?style=flat)](https://www.npmjs.com/package/vadoosdk) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fvadootvpeer%2Fsdk-javascript&via=Vadoobot&text=Web%20Sdk%20to%20reduce%20video%20streaming%20costs%20by%2090%25&hashtags=cdn%2Cp2p%2Cvideo%2Cott%2Clive%2Cstreaming) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/vadootvpeer/sdk-javascript/blob/master/LICENSE)
 
 <h4>Javascript p2p cdn sdk to distribute load and reduce costs(https://peervadoo.com)</h4>
 
