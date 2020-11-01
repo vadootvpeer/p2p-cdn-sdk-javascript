@@ -1,0 +1,41 @@
+{
+  "name": "vadoosdk",
+  "version": "1.0.0",
+  "description": "Javascript p2p cdn sdk to distribute load and reduce costs for hls",
+  "main": "dist/vadoosdk.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadootvpeer/sdk-javascript.git"
+  },
+  "author": "Anil Matcha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vadootvpeer/sdk-javascript/issues"
+  },
+  "homepage": "https://github.com/vadootvpeer/sdk-javascript#readme",
+  "dependencies": {
+    "bittorrent-tracker": "^9.15.0",
+    "debug": "^4.2.0",
+    "simple-peer": "^9.7.2",
+	"events": "^3.2.0",
+    "get-browser-rtc": "^1.0.2",	
+    "m3u8-parser": "^4.4.3",
+    "sha.js": "^2.4.11"	
+  },  
+  "keywords": [
+    "html5",
+    "WebRTC",
+    "video",
+    "mse",
+    "player",
+    "p2p",
+    "peer-to-peer",
+    "hls",
+	"dash",
+    "vadoo",
+	"hlsjs",
+    "bittorrent",
+    "webrtc data channel",
+    "http live streaming"
+  ]  
+}
