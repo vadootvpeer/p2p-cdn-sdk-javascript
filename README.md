@@ -6,7 +6,7 @@
 
 <h4>Javascript p2p cdn sdk to distribute load and reduce costs(https://peervadoo.com)</h4>
 
-Vadootv is a p2p sdk integration to reduce your video streaming costs by upto 30% and scale to 6x the number of users
+Vadootv is a p2p sdk integration to reduce your video streaming costs by upto 90% and scale to 6x the number of users
 
 Vadootv is powered by webrtc which distributes the load on users to reduce the server costs and to improve scalability
 
