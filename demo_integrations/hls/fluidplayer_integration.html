@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fluid Player P2P CDN integration with Vadootv</title>
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>	
+	
+	<link rel="stylesheet" href="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css" type="text/css"/>
+	<script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
+    <style>      
+        video,
+		#video,
+		#fluid_video_wrapper_video {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+		}
+		*{margin: 0;padding: 0;box-sizing: border-box;} 
+		html,body{height:100%}
+		body{background:#000}
+    </style>
+</head>
+
+<body>
+	<video id="video" controls>
+		<source src="https://example.com/path/to/your/playlist.m3u8" type="application/x-mpegURL" />
+	</video>
+	<script>
+			var mixer = new vadoo.base.Mixer(token="TOKEN");			
+			var player = fluidPlayer(
+				'video',
+				{
+					layoutControls: {
+						subtitlesEnabled: true
+					},
+					hlsjsConfig: {
+						liveSyncDurationCount: 5, 
+						loader: mixer.createMixer(),
+					},
+				}
+			);
+			
+			vadoo.base.start_hlsjs_player(player.hlsPlayer);
+    </script>
+</body>
+
+</html>
