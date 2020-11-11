@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Plyr player with Vadoo demo</title>
+	<script src="https://jssdk.peervadoo.com/vadoosdk.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css">
+    <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <style>
+        #wrapper {
+            width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <video id="video"></video>
+    </div>
+
+    <script>
+
+		var mixer = new vadoo.base.Mixer(token="TOKEN");
+		var video = document.getElementById("video");
+		var player = new Plyr(video, {captions: {active: true, update: true}});
+
+		var hls = new Hls({
+			liveSyncDurationCount: 5,
+			loader: mixer.createMixer()
+		});
+
+		vadoo.base.start_hlsjs_player(hls);
+
+		hls.loadSource("https://example.com/path/to/your/playlist.m3u8");
+
+		hls.attachMedia(video);
+
+    </script>
+
+</body>
+</html>
