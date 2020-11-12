@@ -8,6 +8,10 @@
 
 Vadootv is a p2p sdk integration to reduce your video streaming costs by upto 90% and scale to 6x the number of users
 
+Supports all major players Hls.js, Shaka Player, JWPlayer, DPlayer, Plyr, FluidPlayer, Clappr, Flowplayer, MediaElement, Video.js
+
+Supports both streaming protocols hls and dash
+
 Vadootv is powered by webrtc which distributes the load on users to reduce the server costs and to improve scalability
 
 **First 10 GB data free every month using P2P(Peer 2 Peer) network** 
