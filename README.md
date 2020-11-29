@@ -69,6 +69,10 @@ https://github.com/vadootvpeer/sdk-android
 
 Raise an issue for any additional feature request which will be actively worked upon
 
+## FAQ
+
+We have collected some [frequently asked questions](https://peervadoo.com/faq.html). Before reporting an issue, please search if the FAQ has the answer to your problem.
+
 ## Contributors
 
 [Anil](https://github.com/Anil-matcha)
